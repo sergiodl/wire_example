@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cloud/wire"
 )
 
-func InitializeEvent() Event {
+func InitializeEvent(phrase string) (Event, error) {
 	wire.Build(NewEvent, NewGreeter, NewMessage)
-	return Event{}
+	return Event{}, nil
 }
